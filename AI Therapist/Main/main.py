@@ -3,10 +3,10 @@ import pandas as pd
 import os
 import cv2
 
-b1 = np.load('AI Therapist/Hidden Layer/Biases1.npy')
-b2 = np.load('AI Therapist/Hidden Layer/Biases2.npy')
-W1 = np.load('AI Therapist/Hidden Layer/Weights1.npy')
-W2 = np.load('AI Therapist/Hidden Layer/Weights2.npy')
+b1 = np.load('Hidden Layer/Biases1.npy')
+b2 = np.load('Hidden Layer/Biases1.npy/Biases2.npy')
+W1 = np.load('Hidden Layer/Biases1.npy/Weights1.npy')
+W2 = np.load('Hidden Layer/Biases1.npy/Weights2.npy')
 
 DATADIR = "AI Therapist/"
 CATEGORIES = ["testing"]
@@ -14,6 +14,7 @@ CATEGORIES = ["testing"]
 data = []
 IMG_SIZE = 50
 
+## takes the image from testing directory and creates a working numpy array
 def create_testing_data():
 
     path = os.path.join(DATADIR, CATEGORIES[0])
@@ -28,6 +29,8 @@ def create_testing_data():
         
 create_testing_data()
 
+
+## this series of functions runs the forward prop with the new array
 def get_predictions(A2):
     return np.argmax(A2, 0)
 
@@ -45,9 +48,14 @@ def forward_prop(W1, b1, W2, b2, X):
 
     return A2
 
+## predictions are made by get_predictions() which takes the highest probability from A2 (output layer)
 def make_predictions(X, W1, b1, W2, b2):
-    A2 = forward_prop(W1, b1, W2, b2, X)
-    predictions = get_predictions(A2)
+    try:
+        A2 = forward_prop(W1, b1, W2, b2, X)
+        predictions = get_predictions(A2)
+    except:
+        print("Runtime Error")
+    
     return predictions
 
 data = np.array(data)
@@ -55,6 +63,7 @@ data = np.array(data)
 data_t = data[0:1].T
 X_t = data_t
 
+## this if-statement takes the weights and biases(in separate files) and test image array and starts the forward propagation process
 if make_predictions(X_t, W1, b1, W2, b2) == 1:
     print("Sad")
 else:
