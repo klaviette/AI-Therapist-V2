@@ -3,12 +3,12 @@ import pandas as pd
 import os
 import cv2
 
-b1 = np.load('input/weights_and_biases_v1/Biases1.npy')
-b2 = np.load('input/weights_and_biases_v1/Biases2.npy')
-W1 = np.load('input/weights_and_biases_v1/Weights1.npy')
-W2 = np.load('input/weights_and_biases_v1/Weights2.npy')
+b1 = np.load('Hidden Layer/Biases1.npy')
+b2 = np.load('Hidden Layer/Biases1.npy/Biases2.npy')
+W1 = np.load('Hidden Layer/Biases1.npy/Weights1.npy')
+W2 = np.load('Hidden Layer/Biases1.npy/Weights2.npy')
 
-DATADIR = "input/"
+DATADIR = "Hidden Layer/"
 CATEGORIES = ["testing"]
 
 data = []
