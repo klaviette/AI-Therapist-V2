@@ -3,12 +3,12 @@ import pandas as pd
 import os
 import cv2
 
-b1 = np.load('Hidden Layer/Biases1.npy')
-b2 = np.load('Hidden Layer/Biases1.npy/Biases2.npy')
-W1 = np.load('Hidden Layer/Biases1.npy/Weights1.npy')
-W2 = np.load('Hidden Layer/Biases1.npy/Weights2.npy')
+b1 = np.load('AI Therapist/Hidden Layer/Biases1.npy')
+b2 = np.load('AI Therapist/Hidden Layer/Biases2.npy')
+W1 = np.load('AI Therapist/Hidden Layer/Weights1.npy')
+W2 = np.load('AI Therapist/Hidden Layer/Weights2.npy')
 
-DATADIR = "Hidden Layer/"
+DATADIR = "AI Therapist/"
 CATEGORIES = ["testing"]
 
 data = []
