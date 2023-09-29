@@ -14,8 +14,11 @@ The file that will run is main.py; and weights and biases in the form of .npy fi
 
 """
 b1 = np.load('AI Therapist/Hidden Layer/Biases1.npy')
+
 b2 = np.load('AI Therapist/Hidden Layer/Biases2.npy')
+
 W1 = np.load('AI Therapist/Hidden Layer/Weights1.npy')
+
 W2 = np.load('AI Therapist/Hidden Layer/Weights2.npy')
 """
 
